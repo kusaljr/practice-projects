@@ -1,16 +1,15 @@
 const cheerio = require('cheerio')
 const request = require('request')
-
+const yargs = require('yargs')
 
 const url = 'https://www.google.com/search?q='
-let lyrics
 
-if (process.argv.length != 3){
+const arguments = yargs.argv
+
+let lyrics = (arguments._).join('')
+
+if (process.argv.length <= 2){
     console.log("Please pass Song Name which you want to find lyrics of!")
-}
-else{
-
-    lyrics = process.argv[2] ;
 }
 
 const fetchURL = `${url}${lyrics} lyrics`

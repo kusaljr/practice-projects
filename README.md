@@ -8,4 +8,4 @@ npm install
 
 Use:
 
-node index.js (song name/(without space please :D))
+node index.js (song name)
