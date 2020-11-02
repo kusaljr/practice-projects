@@ -1,11 +1,11 @@
 # practice-projects
 
-Lyrics Scraper Using Cheerio
+#Lyrics Scraper Using Cheerio
 
-Install:
+##Install:
 
 npm install
 
-Use:
+##Use:
 
 node index.js (song name)
