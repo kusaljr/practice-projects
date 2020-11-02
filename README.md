@@ -4,8 +4,8 @@
 
 ## Install:
 
-* npm install *
+*npm install*
 
 ## Use:
 
-* node index.js (song name) *
+*node index.js (song name)*
