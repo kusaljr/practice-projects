@@ -1,4 +1,3 @@
-# practice-projects
 
 # Lyrics Scrapping API
 
