@@ -9,4 +9,4 @@
 
 *npm start*
 
-**http:localhost:3000/lyrics?title={song name}**
+**http:localhost:3000/lyrics?title={song name/song name with artists ;D}**
