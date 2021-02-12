@@ -1,0 +1,407 @@
+body {
+  background-image: url('https://free4kwallpapers.com/uploads/originals/2018/06/18/created-a-3d-render-of-a-pokemon-trophy-in-the-grass-wallpaper.jpg');
+  padding-top: 50px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.logo{
+  position: absolute;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+button {
+  background: #AA0B53;
+  border: 0;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 auto;
+  display: block;
+  outline: none;
+}
+button:hover {
+  background: #bc1360;
+} 
+button:active {
+  box-shadow: inset 0 0 0 3px rgba(0,0,0,0.4);
+}
+
+#pack-opened {
+  position: relative;
+}
+
+#pack-opened .pack-flash {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  top: 50px;
+  pointer-events: none;
+  transform: translateX(-50%);
+  z-index: 5;
+  perspective: 5000px;
+  -webkit-perspective: 5000px;
+}
+
+
+
+#pack-opened .pack-flash .pack-flash-light, #pack-opened .pack-flash .pack-flash-particles, #pack-opened .pack-flash .pack-flash-pack {
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+#pack-opened .pack-flash .pack-flash-light, #pack-opened .pack-flash .pack-flash-particles {
+  width: 100%;
+}
+
+#pack-opened.open .pack-flash .pack-flash-light {
+  -webkit-animation: pack-flash-light 3s ease-out;
+  animation: pack-flash-light 3s ease-out;
+  opacity: 0;
+}
+
+#pack-opened.open .pack-flash .pack-flash-particles {
+  -webkit-animation: pack-flash-particles 3s ease-out;
+  animation: pack-flash-particles 3s ease-out;
+  opacity: 0
+}
+
+
+#pack-opened .pack-flash .pack-flash-pack {
+  position: relative;
+  opacity: 1;
+  padding-top: 55%;
+  margin: 10% 10%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background-size: 0 0
+}
+
+#pack-opened.open .pack-flash .pack-flash-pack {
+  opacity: 0;
+  -webkit-animation: pack-flash-pack 3s ease-in-out;
+  animation: pack-flash-pack 3s ease-in-out;
+}
+
+#pack-opened .pack-flash .pack-flash-pack .front {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+#pack-opened .pack-flash .pack-flash-pack .bottom {
+  position: absolute;
+  top: 100%;
+  left: -5%;
+  width: 110%;
+  height: 6.74157303%
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+}
+
+#pack-opened.open .pack-flash .pack-flash-pack .top {
+ -webkit-animation: pack-flash-pack-top .9s ease-in 1.2s forwards;
+  animation: pack-flash-pack-top .9s ease-in 1.2s forwards;
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top img, #pack-opened .pack-flash .pack-flash-pack .top span {
+  float: left;
+  height: 100%;
+  width: 25%;
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top img {
+  height: 100%;
+  width: 100%;
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top .cut {
+  position: absolute;
+  bottom: 0;
+  top: 100%;
+  opacity: 0;
+  z-index: 9;
+
+}
+
+#pack-opened.open .pack-flash .pack-flash-pack .top .cut {
+  -webkit-animation: pack-flash-pack-cut .9s ease-out;
+  animation: pack-flash-pack-cut .9s ease-out;
+  opacity: 0;
+
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top .cut img {
+  width: 100%;
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top span {
+  -webkit-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+  display: inline-block;
+}
+
+
+#pack-opened.open .pack-flash .pack-flash-pack .top span {
+  -webkit-animation: pack-flash-pack-rip .75s ease-in-out .9s forwards;
+  animation: pack-flash-pack-rip .75s ease-in-out .9s forwards;
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top>img {
+  width: 25%
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top>span {
+  width: 75%
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top>span>img {
+  width: 33.33%
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top>span>span {
+  width: 66.66%
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top>span>span>img {
+  width: 50%
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top>span>span>span {
+  width: 50%
+}
+
+#pack-opened .pack-flash .pack-flash-pack .top>span>span>span>img {
+  width: 100%
+}
+
+#pack-opened .pack-flash .pack-flash-pack .pack-count-corner {
+  top: 0;
+  right: 0px;
+  z-index: 3
+}
+
+
+@media screen and (min-width: 480px) {
+  .cards-reveal {
+    display: block;
+  }
+}
+
+#pack-opened .cards-reveal {
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50px;
+  z-index: 4;
+  perspective: 5000px;
+  -webkit-perspective: 5000px;
+}
+
+#pack-opened .cards-reveal ul {
+  margin: 50px;
+  position: relative;
+  overflow: visible;
+}
+#pack-opened .cards-reveal ul li {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+#pack-opened .cards-reveal ul li img {
+  width: 100%;
+}
+#pack-opened.open .cards-reveal ul li.card-01 {
+  animation: card-spread-01 .5s ease forwards;
+  animation-delay: 2.5s;
+  z-index: 4;
+}
+
+#pack-opened.open .cards-reveal ul li.card-04 {
+  animation: card-spread-04 .5s ease forwards;
+  animation-delay: 2.5s;
+  z-index: 1;
+}
+
+
+
+
+
+
+@keyframes pack-flash-pack {
+  0% {
+    -webkit-transform: scale(1) rotateY(0deg);
+    -ms-transform: scale(1) rotateY(0deg);
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+  20% {
+    opacity: 1
+  }
+  40% {
+    -webkit-transform: scale(1) rotateY(0deg);
+    -ms-transform: scale(1) rotateY(0deg);
+    transform: scale(1) rotateY(0deg);
+    opacity: 1
+  }
+  55% {
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%)
+  }
+  75% {
+    -webkit-transform: translateY(300%);
+    -ms-transform: translateY(300%);
+    transform: translateY(300%);
+    opacity: 1
+  }
+  85% {
+    -webkit-transform: translateY(300%);
+    -ms-transform: translateY(300%);
+    transform: translateY(300%);
+    opacity: 0;
+  }
+}
+
+@keyframes pack-flash-pack-top {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  50% {
+    opacity: 0
+  }
+  100% {
+    -webkit-transform: rotate(-180deg) translateX(200%);
+    -ms-transform: rotate(-180deg) translateX(200%);
+    transform: rotate(-180deg) translateX(200%);
+    opacity: 0
+  }
+}
+
+@keyframes pack-flash-pack-cut {
+  0% {
+    left: 0;
+    opacity: 0;
+    transform: rotate(0);
+  }
+  30% {
+    opacity: 1
+  }
+  80% {
+    opacity: 1
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes pack-flash-pack-rip {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    transform: rotate(-40deg)
+  }
+}
+
+@keyframes pack-flash-light {
+  0% {
+    -webkit-transform: scale(.8) translateZ(-300px);
+    -ms-transform: scale(.8) translateZ(-300px);
+    transform: scale(.8) translateZ(-300px)
+  }
+  10% {
+    -webkit-transform: scale(1) translateZ(-300px);
+    -ms-transform: scale(1) translateZ(-300px);
+    transform: scale(1) translateZ(-300px);
+    opacity: 1
+  }
+  50% {
+    opacity: 1
+  }
+  75% {
+    opacity: 0
+  }
+}
+
+@keyframes card-spread-01 {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-157.5%);
+  }
+  100% {
+    transform: translateX(-157.5%);
+  }
+}
+@keyframes card-spread-02 {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-157.5%);
+  }
+  100% {
+    transform: translateX(-52.5%);
+  }
+}
+@keyframes card-spread-03 {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-157.5%);
+  }
+  100% {
+    transform: translateX(52.5%);
+  }
+}
+@keyframes card-spread-04 {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-157.5%);
+  }
+  100% {
+    transform: translateX(157.5%);
+  }
+}
