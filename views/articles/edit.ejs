@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Edit</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Edit Blog</h1>
+        <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
+            <%- include('_forms_fields') %> 
+        </form>
+    </div>
+    
+</body>
+</html>
