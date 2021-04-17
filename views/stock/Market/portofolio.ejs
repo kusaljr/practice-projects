@@ -1,0 +1,36 @@
+<%- include('../header') %>
+
+<div class="capital-amt">
+    <h2>Your Current Capital: Rs. <%= user.capital %> </h2>
+</div>
+<% if(userStock == ''){ %>
+  <h1>You haven't invested in any stock!</h1>
+  <% }else{ %>
+<div class="invested-stock">
+    <div class="top-list">
+        <div class="gainer">
+          <h2>Your Stock</h2>
+          <table id="customers" style="width:100%;margin-left: 30%; margin-top:0">
+            <thead>
+             <tr>
+               <th>Symbol</th>
+               <th>Quantity</th>
+               <th>Bought Price</th>
+               <th>Bought Date</th>
+             </tr>
+           </thead>
+           <tbody>
+             <% userStock.forEach(function(userStock){ %> 
+               <tr>
+                 <td><a href="/stock/<%= userStock.StockName %>"><%= userStock.StockName %></a></td>
+                 <td><%= userStock.quantity %></td>
+                 <td><%= userStock.price %></td>
+                 <td><%= userStock.createdAt %></td>
+               </tr>
+             <% }) %> 
+           </tbody>
+       </table>
+       </div>
+       </div>
+</div>
+<% } %> 

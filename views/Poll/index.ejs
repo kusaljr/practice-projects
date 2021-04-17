@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id = "poll-form">
+        <p>Please select your gender:</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <p>PS: FYI There are only two gender! Put your faggotry aside and vote!</p>
+
+        <input type="submit" value="Vote">
+    </form>
+
+    <div id="chartContainer" style="width: 300px;">
+    </div>
+
+
+    <script>
+        const socket = io('http://localhost:3000')
+        socket.on('connection')
+
+        const form = document.getElementById('poll-form');
+        form.addEventListener('submit', (e)=>{
+            const choice = document.querySelector('input[name=gender]:checked').value
+            
+            fetch(`http://localhost:3000/api/${choice}`)
+                .then(res=> res.json())
+                .then(data=>{
+                    socket.emit('message', data)
+                })
+                .catch(err=>console.log(err))
+            
+            e.preventDefault()
+        })  
+        
+        let dataPoints = [
+            {label: 'Male', y : 0},
+            {label: 'female', y : 0},
+        ]
+
+        const chartContainer = document.querySelector('#chartContainer')
+
+        socket.on('message', (data)=>{
+            dataPoints[0].y = data.gender.male
+            dataPoints[1].y = data.gender.female
+            
+            const chart = new CanvasJS.Chart('chartContainer',{
+                animationEnabled: false,
+                theme: 'theme1',
+                title:{
+                    text:'Number of Male and Female'
+                },
+                data:[
+                    {
+                        type:'column',
+                        dataPoints:dataPoints
+                    }
+                ]
+            })
+            chart.render()
+        })
+
+    </script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</body>
+</html>

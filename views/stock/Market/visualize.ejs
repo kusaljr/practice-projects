@@ -1,0 +1,70 @@
+<%- include('../header') %>
+
+<div class="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5" >
+    <div class="rounded shadow-xl overflow-hidden w-full md:flex" style="max-width:100%">
+        <div class="flex w-full md:w-1/2 px-5 pb-4 pt-8 bg-indigo-500 text-white items-center">
+            <canvas id="chart" class="w-full"></canvas>
+        </div>
+        <div class="flex w-full md:w-1/2 p-10 bg-gray-100 text-gray-600 items-center" style="height: 200px;">
+            <div class="w-full">
+                <h3 class="text-lg font-semibold leading-tight text-gray-800"><%= detail.security.securityName %> </h3>
+                <h6 class="text-sm leading-tight mb-2"><span ><%= detail.security.symbol %> </span>&nbsp;&nbsp;-&nbsp;&nbsp;<%= detail.securityDailyTradeDto.businessDate %> </h6>
+                <div class="flex w-full items-end mb-6">
+                    <span class="block leading-none text-3xl text-gray-800" >Rs. <%= detail.securityDailyTradeDto.lastTradedPrice %> </span>
+                    <span class="block leading-5 text-sm ml-4 text-green-500" x-text="`${stockTicker.price.high-stockTicker.price.low<0?'▼':'▲'} ${(stockTicker.price.high-stockTicker.price.low).toFixed(3)} (${(((stockTicker.price.high/stockTicker.price.low)*100)-100).toFixed(3)}%)`"></span>
+                </div>
+                <div class="flex w-full text-xs">
+                    <div class="flex w-5/12">
+                        <div class="flex-1 pr-3 text-left font-semibold">Open</div>
+                        <div class="flex-1 px-3 text-right" x-text="stockTicker.price.open.toFixed(3)">Rs. <%= detail.securityDailyTradeDto.openPrice %> </div>
+                    </div>
+                    <div class="flex w-7/12">
+                        <div class="flex-1 px-3 text-left font-semibold">Market Cap</div>
+                        <div class="flex-1 pl-3 text-right" x-text="stockTicker.price.cap.m_formatter()"><%= detail.marketCapitalization %> </div>
+                    </div>
+                </div>
+                <div class="flex w-full text-xs">
+                    <div class="flex w-5/12">
+                        <div class="flex-1 pr-3 text-left font-semibold">High</div>
+                        <div class="px-3 text-right" x-text="stockTicker.price.high.toFixed(3)">Rs. <%= detail.securityDailyTradeDto.highPrice %></div>
+                    </div>
+                    <div class="flex w-7/12">
+                        <div class="flex-1 px-3 text-left font-semibold">P/E ratio</div>
+                        <div class="pl-3 text-right" x-text="stockTicker.price.ratio.toFixed(2)">0</div>
+                    </div>
+                </div>
+                <div class="flex w-full text-xs">
+                    <div class="flex w-5/12">
+                        <div class="flex-1 pr-3 text-left font-semibold">Low</div>
+                        <div class="px-3 text-right" x-text="stockTicker.price.low.toFixed(3)">Rs. <%= detail.securityDailyTradeDto.lowPrice %></div>
+                    </div>
+                    <div class="flex w-7/12">
+                        <div class="flex-1 px-3 text-left font-semibold">Dividend yield</div>
+                        <div class="pl-3 text-right" x-text="`${stockTicker.price.dividend}%`"><%= detail.promoterPercentage %> %</div>
+                    </div>
+                </div>
+            </div>
+            <button class="open-button" onclick="openForm()">Buy This Stock</button>
+
+            <div class="form-popup" id="myForm">
+            <form action="/stock" method="POST" class="form-container">
+                <h1>Buy <%= detail.security.symbol %></h1>
+
+                <label for="email"><b>Security Name</b></label>
+                <input type="text" value="<%= detail.security.symbol %> " disabled>
+                <input type="text" value="<%= detail.security.symbol %> " name="stock" hidden>
+
+
+                <label for="email"><b>Quantity</b></label>
+                <br><br>
+                <input type="number" placeholder="Total stock you want to buy!" name="quantity" min="10" required style="width: 80%; height: 100%;">
+                <br><br>
+                <button type="submit" class="btn">Buy</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/chart.js"></script>

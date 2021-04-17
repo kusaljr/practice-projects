@@ -1,0 +1,24 @@
+<%- include('./header') %> 
+<h1 style="margin: 50px; position: absolute;">IPO Status</h1>
+<table id="customers">
+  <thead>
+    <tr>
+      <th>Security Name</th>
+      <th>Issue From</th>
+      <th>Issue To</th>
+      <th>Issue Manager</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% company.forEach(function(top_gainer){ %> 
+      <tr>
+        <td><%= top_gainer.StockSymbol %> </td>
+        <td><%= top_gainer.StartDateString %></td>
+        <td><%= top_gainer.EndDateString %></td>
+        <td><%= top_gainer.IssueManager %></td>
+        <td style="color: red;">Closed</td>
+      </tr>
+    <% }) %> 
+  </tbody>
+</table>

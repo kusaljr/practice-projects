@@ -1,0 +1,50 @@
+[
+    {
+       "symbol":"UPCL",
+       "ltp":173.00,
+       "pointChange":-8.00,
+       "percentageChange":-4.42,
+       "securityName":"UNIVERSAL POWER COMPANY LTD",
+       "securityId":2810
+    },
+    {
+       "symbol":"RHPL",
+       "ltp":506.00,
+       "pointChange":-22.00,
+       "percentageChange":-4.17,
+       "securityName":"RASUWAGADHI HYDROPOWER COMPANY LIMITED",
+       "securityId":2841
+    },
+    {
+       "symbol":"AIL",
+       "ltp":845.00,
+       "pointChange":-32.00,
+       "percentageChange":-3.65,
+       "securityName":"Ajod Insurance Limited",
+       "securityId":2893
+    },
+    {
+       "symbol":"NICGF",
+       "ltp":12.16,
+       "pointChange":-0.45,
+       "percentageChange":-3.57,
+       "securityName":"NIC Asia Growth Fund",
+       "securityId":2779
+    },
+    {
+       "symbol":"PMHPL",
+       "ltp":191.00,
+       "pointChange":-7.00,
+       "percentageChange":-3.54,
+       "securityName":"Panchakanya Mai Hydropower Ltd",
+       "securityId":2786
+    },
+    {
+       "symbol":"RHPC",
+       "ltp":211.00,
+       "pointChange":-7.00,
+       "percentageChange":-3.21,
+       "securityName":"Ridi Hydropower Development Company Ltd.",
+       "securityId":610
+    }
+ ]

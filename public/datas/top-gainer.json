@@ -1,0 +1,50 @@
+[
+   {
+      "symbol":"BFC",
+      "ltp":187.00,
+      "pointChange":17.00,
+      "percentageChange":10.00,
+      "securityName":"Best Finance Company Ltd.",
+      "securityId":227
+   },
+   {
+      "symbol":"NICLBSL",
+      "ltp":1868.00,
+      "pointChange":169.00,
+      "percentageChange":9.95,
+      "securityName":"NIC ASIA Laghubitta Bittiya Sanstha Limited",
+      "securityId":2887
+   },
+   {
+      "symbol":"MLBSL",
+      "ltp":1208.00,
+      "pointChange":109.00,
+      "percentageChange":9.92,
+      "securityName":"Mahila Lagubitta Bittiya Sanstha Limited ",
+      "securityId":2925
+   },
+   {
+      "symbol":"JLI",
+      "ltp":565.00,
+      "pointChange":51.00,
+      "percentageChange":9.92,
+      "securityName":"Jyoti Life Insurance Ltd",
+      "securityId":2929
+   },
+   {
+      "symbol":"GRDBL",
+      "ltp":204.00,
+      "pointChange":18.00,
+      "percentageChange":9.68,
+      "securityName":"Green Development Bank Ltd.",
+      "securityId":2744
+   },
+   {
+      "symbol":"CHL",
+      "ltp":295.00,
+      "pointChange":26.00,
+      "percentageChange":9.67,
+      "securityName":"Chhyangdi Hydropower Ltd.",
+      "securityId":2766
+   }
+]

@@ -1,0 +1,61 @@
+<%- include('../header') %>
+<div class="capital-amt">
+    <h2>Your Current Capital: Rs. <%= user.capital %> </h2>
+</div>
+<div class="ticky">
+  <%- include('./ticker') %> 
+</div>
+<%- include('./search') %> 
+
+<div class="top-list">
+ <div class="gainer">
+   <h2 style="position: absolute;
+   top:40%;
+   margin-left: 50px;">Top Gainer</h2>
+  <table id="customers">
+    <thead>
+      <tr>
+        <th>Security Name</th>
+        <th>Symbol</th>
+        <th>Point Change</th>
+        <th>Percentage Change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% top_gainer.forEach(function(top_gainer){ %> 
+        <tr>
+          <td><%= top_gainer.securityName %> </td>
+          <td><%= top_gainer.symbol %></td>
+          <td><%= top_gainer.pointChange %></td>
+          <td><%= top_gainer.percentageChange %></td>
+        </tr>
+      <% }) %> 
+    </tbody>
+</table>
+</div>
+
+<div class="gainer">
+
+ <table id="customers">
+   <thead>
+     <tr>
+       <th>Security Name</th>
+       <th>Symbol</th>
+       <th>Point Change</th>
+       <th>Percentage Change</th>
+     </tr>
+   </thead>
+   <tbody>
+     <% top_loser.forEach(function(top_loser){ %> 
+       <tr>
+         <td><%= top_loser.securityName %> </td>
+         <td><%= top_loser.symbol %></td>
+         <td><%= top_loser.pointChange %></td>
+         <td><%= top_loser.percentageChange %></td>
+       </tr>
+     <% }) %> 
+   </tbody>
+</table>
+</div>
+</div>
+<script src="/js/main.js"></script>

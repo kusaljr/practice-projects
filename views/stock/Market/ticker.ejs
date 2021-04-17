@@ -1,0 +1,12 @@
+<div id="example">
+
+  <div id="ticker" class="stockTicker">
+    <% marketData.forEach(function(marketData){ %> 
+      <% if (marketData.percentageChange > 0) { %>
+        <span class="up"><span class="quote"><%= marketData.symbol %> </span> <%= marketData.lastTradedPrice %>    (<%=   Number(marketData.percentageChange).toFixed(2) %>%) </span>
+      <%  }else{ %>
+        <span class="down"><span class="quote"><%= marketData.symbol %> </span> <%= marketData.lastTradedPrice %>   (<%=   Number(marketData.percentageChange).toFixed(2) %>%)</span>
+      <% } %>   
+    <% }) %> 
+  </div>
+</div>
