@@ -1,0 +1,42 @@
+{
+  "name": "Restro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "production": "mix --production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.2.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.18",
+    "nodemon": "^2.0.7",
+    "noty": "^3.2.0-beta-deprecated",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.13",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1"
+  }
+}
